@@ -1,0 +1,925 @@
+Data Structure Practicals
+Practical 1:
+Q.1) Write a program to demonstrate the use of various Data Types and Structures in python
+Numbers:
+a = 5  
+print(&quot;The type of a&quot;, type(a))    
+b = 40.5  
+print(&quot;The type of b&quot;, type(b))   
+c = 1+3j  
+print(&quot;The type of c&quot;, type(c))  
+Strings:
+str = &quot;string using double quotes&quot;  
+print(str)  
+List:
+list1  = [1, &quot;hi&quot;, &quot;Python&quot;, 2]    
+#Checking type of given list  
+print(type(list1))  
+  
+#Printing the list1  
+print (list1)  
+  
+# List slicing  
+print (list1[3:])  
+  
+# List slicing  
+print (list1[0:2])   
+  
+# List Concatenation using + operator  
+print (list1 + list1)  
+  
+# List repetation using * operator  
+print (list1 * 3)
+Tuple:
+tup  = (&quot;hi&quot;, &quot;Python&quot;, 2)    
+# Checking type of tup  
+print (type(tup))    
+  
+#Printing the tuple  
+print (tup)  
+  
+# Tuple slicing  
+print (tup[1:])    
+print (tup[0:1])    
+  
+# Tuple concatenation using + operator  
+print (tup + tup)    
+  
+# Tuple repatation using * operator  
+print (tup * 3)
+Dictionary:
+d = {1:&#39;Jimmy&#39;, 2:&#39;Alex&#39;, 3:&#39;john&#39;, 4:&#39;mike&#39;}     
+  
+# Printing dictionary  
+print (d)  
+  
+# Accesing value using keys  
+print(&quot;1st name is &quot;+d[1])   
+print(&quot;2nd name is &quot;+ d[4])    
+  
+print (d.keys())    
+print (d.values())
+Q.2) Write a Python program to demonstrate use of arrays and operations of arrays.
+from array import *
+arrayName = array(typecode, [Initializers])
+Typecode are the codes that are used to define the type of value the array will hold.
+Some common typecodes used are:
+Typecode Value
+b Represents signed integer of size 1 byte/td&gt;
+B Represents unsigned integer of size 1 byte
+c Represents character of size 1 byte
+i Represents signed integer of size 2 bytes
+I Represents unsigned integer of size 2 bytes
+f Represents floating point of size 4 bytes
+d Represents floating point of size 8 bytes
+
+Creating array:
+import array as ar
+newarr = ar.array(&#39;d&#39;, [2.1, 4.5, 5.5])
+print(newarr)
+output:
+array(&#39;d&#39;, [2.1, 4.5, 5.5])
+Slicing python array:
+import array as ar
+newarr = ar.array(&#39;d&#39;, [2.1, 4.5,3.5,4.2,3.3, 5.5])
+print(&quot;First element:&quot;, newarr[0])
+print(&quot;Second element:&quot;, newarr[1])
+print(&quot;Last element:&quot;, newarr[-1])
+print(newarr[2:5]) # 3rd to 5th
+print(newarr[:])   # beginning to end
+
+Output:
+First element: 2.1
+Second element: 4.5
+Last element: 5.5
+array(&#39;d&#39;, [3.5, 4.2, 3.3])
+array(&#39;d&#39;, [2.1, 4.5, 3.5, 4.2, 3.3, 5.5])
+Length of array:
+a = len(newarr)
+Changing Element:
+import array as ar
+num = ar.array(&#39;i&#39;, [1, 2, 3, 5, 7, 10])
+num[0] = 0    
+print(num) 
+Adding Element:
+import array as ar
+num = ar.array(&#39;i&#39;, [1, 2, 3])
+ln=len(num)
+print(ln) #length
+num[0] = 0  #changing first element  
+print(num)
+num.append(4) #appending 4 to array
+print(num)    
+num.extend([5, 6, 7]) #extending numbers with 5,6,7
+print(num)
+
+Output:
+3
+array(&#39;i&#39;, [0, 2, 3])
+array(&#39;i&#39;, [0, 2, 3, 4])
+array(&#39;i&#39;, [0, 2, 3, 4, 5, 6, 7])
+Insertion operation:
+import array as ar
+
+num = ar.array(&#39;i&#39;, [1, 2, 3, 5, 7, 10])
+num.insert(1,9)
+for x in num:
+ print(x)
+Output:
+1
+9
+2
+3
+5
+7
+10
+Deletion operation:
+import array as ar
+num = ar.array(&#39;i&#39;, [1, 2, 3, 5, 7, 10])
+num.remove(7)
+for x in num:
+ print(x)
+Output:
+1
+2
+3
+5
+10
+Q.3) Write a program to demonstrate use of Sets and various operation on Sets in python.
+Code 1:
+# Python program to demonstrate working# of 
+# Set in Python 
+  
+# Creating two sets 
+set1 = set() 
+set2 = set() 
+  
+# Adding elements to set1 
+for i in range(1, 6): 
+    set1.add(i) 
+  
+# Adding elements to set2 
+for i in range(3, 8): 
+    set2.add(i) 
+  
+print("Set1 = ", set1) 
+print("Set2 = ", set2) 
+print("\n") 
+  
+# Union of set1 and set2 
+set3 = set1 | set2# set1.union(set2) 
+print("Union of Set1 & Set2: Set3 = ", set3) 
+  
+# Intersection of set1 and set2 
+set4 = set1 & set2# set1.intersection(set2) 
+print("Intersection of Set1 & Set2: Set4 = ", set4) 
+print("\n") 
+  
+# Checking relation between set3 and set4 
+if set3 > set4: # set3.issuperset(set4) 
+    print("Set3 is superset of Set4") 
+elif set3 < set4: # set3.issubset(set4) 
+    print("Set3 is subset of Set4") 
+else : # set3 == set4 
+    print("Set3 is same as Set4") 
+  
+# displaying relation between set4 and set3 
+if set4 < set3: # set4.issubset(set3) 
+    print("Set4 is subset of Set3") 
+    print("\n") 
+  
+# difference between set3 and set4 
+set5 = set3 - set4 
+print("Elements in Set3 and not in Set4: Set5 = ", set5) 
+print("\n") 
+  
+# Removing all the values of set5 
+set5.clear() 
+  
+print("After applying clear on sets Set5: ") 
+print("Set5 = ", set5) 
+
+Code 2:
+a = set()
+b = set()
+
+a.add(1)
+a.add(2)
+a.add(3)
+
+b.add(3)
+b.add(4)
+b.add(5)
+
+print("Union = ", a.union(b))
+print("Intersection = ", a.intersection(b))
+print("Difference = ", a.difference(b))
+Practical 2
+Q.1) Write a Program to implement stack and demonstrate push, pop and peek operations in python.
+class stack:
+    
+    def __init__(self):
+        self.items = []
+        
+    def isEmpty(self):
+       return self.items == []
+    
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+       return self.items[len(self.items)-1]
+
+    def size(self):
+        return len(self.items)
+
+s=stack()
+print("data",s.isEmpty())
+for i in range(1,10):
+    s.push(i)
+ 
+#s.push("true")
+for i in range(1,10):
+  print("data",s.pop())
+#print("data",s.pop())
+print("length=",s.size())
+    
+
+Q.2) Implement the program for postfix evaluation.
+class evaluate_postfix:
+def __init__(self):
+self.items = []
+self.size = -1
+
+def isEmpty(self):
+return self.items == []
+
+def push(self, item):
+self.items.append(item)
+self.size += 1
+
+def pop(self):
+if self.items == []:
+return 0
+else:
+self.size -= 1
+return self.items.pop()
+
+def seek(self):
+if self.items != []:
+return self.items[-1]
+else:
+return False
+
+def evaluate(self, expr):
+for i in expr:
+if i in "0123456789":
+self.push(i)
+
+else:
+op1 = self.pop()
+op2 = self.pop()
+result = self.cal(op2, op1,i)
+self.push(result)
+return self.pop()
+
+def cal(self, op2, op1, i):
+if i == "*":
+return int(op2) * int(op1)
+elif i == "/":
+return int(op2)/int(op1)
+elif i == "+":
+return int(op2) + int(op1)
+elif i == "-":
+return int(op2) - int(op1)
+s = evaluate_postfix()
+expr = input("Enter Equation : ")
+value = s.evaluate(expr)
+print("Answer = ", value)
+Practical 3
+Q.1) Write a program to implement the concept of Queue with different operations in python.
+class queue:
+    
+    def __init__(self):
+        self.items = []
+        
+    def isEmpty(self):
+       return self.items == []
+    
+    def enqueue(self, item):
+        self.items.insert(0,item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
+s=queue()
+print(s.isEmpty())
+s.enqueue("abc")
+s.enqueue("xyz")
+s.enqueue("pqr")
+print("length=",s.size())
+print("data",s.dequeue())
+print("data",s.dequeue())
+print("data",s.dequeue())
+print("length=",s.size())
+
+Q.2) Write a program to implement the concept of Circular Queue in python.
+class CircularQueue:
+    #Constructor
+    def __init__(self):
+        self.queue = list()
+        self.head = 0
+        self.tail = 0
+        self.maxSize = 8
+
+    #Adding elements to the queue
+    def enqueue(self,data):
+        if self.size() == self.maxSize-1:
+            return ("Queue Full!")
+        self.queue.append(data)
+        self.tail = (self.tail + 1) % self.maxSize
+        return True
+
+    #Removing elements from the queue
+    def dequeue(self):
+        if self.size()==0:
+            return ("Queue Empty!") 
+        data = self.queue[self.head]
+        self.head = (self.head + 1) % self.maxSize
+        return data
+
+    #Calculating the size of the queue
+    def size(self):
+        if self.tail>=self.head:
+            return (self.tail-self.head)
+        return (self.maxSize - (self.head-self.tail))
+
+q = CircularQueue()
+print(q.enqueue(1))
+print(q.enqueue(2))
+print(q.enqueue(3))
+print(q.enqueue(4))
+print(q.enqueue(5))
+print(q.enqueue(6))
+print(q.enqueue(7))
+print(q.enqueue(8))
+print(q.enqueue(9))
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+Practical 4:
+Q.1) Write a program to create a singly linked list and perform various operations on it in python.
+class Node:
+    def __init__(self, dataval=None):
+        self.dataval = dataval
+        self.nextval = None
+
+class SLinkedList:
+    def __init__(self):
+        self.headval = None
+
+# Function to add node
+    def Inbetween(self,middle_node,newdata):
+        if middle_node is None:
+            print("The mentioned node is absent")
+            return
+        NewNode = Node(newdata)
+        NewNode.nextval = middle_node.nextval
+        middle_node.nextval = NewNode
+
+# Print the linked list
+    def listprint(self):
+        printval = self.headval
+        while printval is not None:
+            print (printval.dataval)
+            printval = printval.nextval
+
+
+list = SLinkedList()
+list.headval = Node("Mon")
+e2 = Node("Tue")
+e3 = Node("Thu")
+
+list.headval.nextval = e2
+e2.nextval = e3
+
+list.Inbetween(list.headval.nextval,"Fri")
+
+list.listprint()
+
+Q.2) Write a program to create a doubly linked list and perform various operations on it in python.
+class Node:
+   def __init__(self, data):
+      self.data = data
+      self.next = None
+      self.prev = None
+# Create the doubly linked list class
+class doubly_linked_list:
+
+   def __init__(self):
+      self.head = None
+
+# Define the push method to add elements at the begining
+   def push(self, NewVal):
+      NewNode = Node(NewVal)
+      NewNode.next = self.head
+      if self.head is not None:
+         self.head.prev = NewNode
+      self.head = NewNode
+
+# Define the append method to add elements at the end
+   def append(self, NewVal):
+
+      NewNode = Node(NewVal)
+      NewNode.next = None
+      if self.head is None:
+         NewNode.prev = None
+         self.head = NewNode
+         return
+      last = self.head
+      while (last.next is not None):
+         last = last.next
+      last.next = NewNode
+      NewNode.prev = last
+      return
+
+# Define the method to print
+   def listprint(self, node):
+      while (node is not None):
+         print(node.data),
+         last = node
+         node = node.next
+
+dllist = doubly_linked_list()
+dllist.push(12)
+dllist.append(9)
+dllist.push(8)
+dllist.push(62)
+dllist.append(45)
+dllist.listprint(dllist.head)
+
+Q.3) Write a program to create a circular linked list and perform various operations on it in python.
+#Represents the node of list.    
+class Node:    
+  def __init__(self,data):    
+    self.data = data;    
+    self.next = None;    
+     
+class CreateList:    
+  #Declaring head and tail pointer as null.    
+  def __init__(self):    
+    self.head = Node(None);    
+    self.tail = Node(None);    
+    self.head.next = self.tail;    
+    self.tail.next = self.head;    
+        
+  #This function will add the new node at the end of the list.    
+  def add(self,data):    
+    newNode = Node(data);    
+    #Checks if the list is empty.    
+    if self.head.data is None:    
+      #If list is empty, both head and tail would point to new node.    
+      self.head = newNode;    
+      self.tail = newNode;    
+      newNode.next = self.head;    
+    else:    
+      #tail will point to new node.    
+      self.tail.next = newNode;    
+      #New node will become new tail.    
+      self.tail = newNode;    
+      #Since, it is circular linked list tail will point to head.    
+      self.tail.next = self.head;    
+     
+  #Displays all the nodes in the list    
+  def display(self):    
+    current = self.head;    
+    if self.head is None:    
+      print("List is empty");    
+      return;    
+    else:    
+        print("Nodes of the circular linked list: ");    
+        #Prints each node by incrementing pointer.    
+        print(current.data),    
+        while(current.next != self.head):    
+            current = current.next;    
+            print(current.data),    
+     
+     
+class CircularLinkedList:    
+  cl = CreateList();    
+  #Adds data to the list    
+  cl.add(1);    
+  cl.add(2);    
+  cl.add(3);    
+  cl.add(4);    
+  #Displays all the nodes present in the list    
+  cl.display();    
+
+Practical 5
+Q.1) Write a program to demonstrate computing hash for given strings in python.
+# Python 3 code to demonstrate
+# working of hash()
+ 
+# initializing objects
+int_val = 4
+str_val = 'GeeksforGeeks'
+flt_val = 24.56
+ 
+# Printing the hash values.
+# Notice Integer value doesn't change
+# You'l have answer later in article.
+print("The integer hash value is : " + str(hash(int_val)))
+print("The string hash value is : " + str(hash(str_val)))
+print("The float hash value is : " + str(hash(flt_val)))
+
+Practical 6
+Q.1) Write a program for implementing Merge Sort in python.
+def mergeSort(myList):
+    if len(myList) > 1:
+        mid = len(myList) // 2
+        left = myList[:mid]
+        right = myList[mid:]
+
+        # Recursive call on each half
+        mergeSort(left)
+        mergeSort(right)
+
+        # Two iterators for traversing the two halves
+        i = 0
+        j = 0
+        
+        # Iterator for the main list
+        k = 0
+        
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+              # The value from the left half has been used
+              myList[k] = left[i]
+              # Move the iterator forward
+              i += 1
+            else:
+                myList[k] = right[j]
+                j += 1
+            # Move to the next slot
+            k += 1
+
+        # For all the remaining values
+        while i < len(left):
+            myList[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            myList[k]=right[j]
+            j += 1
+            k += 1
+
+myList = [54,26,93,17,77,31,44,55,20]
+mergeSort(myList)
+print(myList)
+
+Q.2) Write a program for implementing Insertion Sort in python.
+def insertion_sort(list1):  
+  
+        # Outer loop to traverse through 1 to len(list1)  
+        for i in range(1, len(list1)):  
+  
+            value = list1[i]  
+  
+            # Move elements of list1[0..i-1], that are  
+            # greater than value, to one position ahead  
+            # of their current position  
+            j = i - 1  
+            while j >= 0 and value < list1[j]:  
+                list1[j + 1] = list1[j]  
+                j -= 1  
+            list1[j + 1] = value  
+        return list1  
+            # Driver code to test above  
+  
+list1 = [10, 5, 13, 8, 2]  
+print("The unsorted list is:", list1)  
+  
+print("The sorted list1 is:", insertion_sort(list1))  
+
+Q.3) Write a python program form implementing Bubble sort algorithm.
+def sort(nums):
+    for i in range(len(nums)-1,0,-1):
+        for j in range(i):
+            if nums[j]>nums[j+1]:
+                temp=nums[j]
+                nums[j]=nums[j+1]
+                nums[j+1]=temp
+nums=[5,3,8,6,7,2]
+sort(nums)
+print(nums)
+
+Practical 7
+Q.1) Write a python program for implementing Linear search in python.
+pos=-1
+def search(list,n):
+    i=0
+    while i<len(list):
+         if list[i]==n:
+             globals()['pos']=i
+             return True
+         i=i+1
+    return False
+list=[5,8,6,4,9,2]
+n=9
+if search(list,n):
+    print("Found at",pos)
+else:
+    print("Not Found")
+
+Q.2) Write a python program for implementing Binary Search  in python.
+pos=-1
+def search(list,n):
+    l=0
+    u=len(list)-1
+    while l<=u:
+        mid=(l+u)//2
+        if list[mid]==n:
+            globals()['pos']=mid
+            return True
+        else:
+            if list[mid]<n:
+                l=mid+1
+            else:
+                u=mid-1
+    return False
+list=[5,6,8,3,9,1,12]
+n=29
+if search(list,n):
+    print("Found at",pos)
+else:
+    print("Not Found")
+
+Practical 8
+Q.1) Write a Program to construct the binary tree in python.
+class Node:
+
+    def __init__(self, data):
+
+        self.left = None
+        self.right = None
+        self.data = data
+
+    def insert(self, data):
+# Compare the new value with the parent node
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
+                else:
+                    self.left.insert(data)
+            elif data > self.data:
+                if self.right is None:
+                    self.right = Node(data)
+                else:
+                    self.right.insert(data)
+        else:
+            self.data = data
+
+# Print the tree
+    def PrintTree(self):
+        if self.left:
+            self.left.PrintTree()
+        print( self.data),
+        if self.right:
+            self.right.PrintTree()
+
+# Use the insert method to add nodes
+root = Node(27)
+root.insert(14)
+root.insert(35)
+root.insert(31)
+root.insert(10)
+root.insert(19)
+
+root.PrintTree()
+
+
+Q.2) Write a program for inorder, postorder and preorder in python.
+class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+  
+  
+# A function to do inorder tree traversal
+def printInorder(root):
+  
+    if root:
+  
+        # First recur on left child
+        printInorder(root.left)
+  
+        # then print the data of node
+        print(root.val),
+  
+        # now recur on right child
+        printInorder(root.right)
+  
+  
+# A function to do postorder tree traversal
+def printPostorder(root):
+  
+    if root:
+  
+        # First recur on left child
+        printPostorder(root.left)
+  
+        # the recur on right child
+        printPostorder(root.right)
+  
+        # now print the data of node
+        print(root.val),
+  
+  
+# A function to do preorder tree traversal
+def printPreorder(root):
+  
+    if root:
+  
+        # First print the data of node
+        print(root.val),
+  
+        # Then recur on left child
+        printPreorder(root.left)
+  
+        # Finally recur on right child
+        printPreorder(root.right)
+  
+  
+# Driver code
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+print "Preorder traversal of binary tree is"
+printPreorder(root)
+  
+print "\nInorder traversal of binary tree is"
+printInorder(root)
+  
+print "\nPostorder traversal of binary tree is"
+printPostorder(root)
+
+Practical 9
+Q.1) Write a program to construct a binary search tree in python.
+ def binary_search(arr, low, high, x):
+ 
+    # Check base case
+    if high >= low:
+ 
+        mid = (high + low) // 2
+ 
+        # If element is present at the middle itself
+        if arr[mid] == x:
+            return mid
+ 
+        # If element is smaller than mid, then it can only
+        # be present in left subarray
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid - 1, x)
+ 
+        # Else the element can only be present in right subarray
+        else:
+            return binary_search(arr, mid + 1, high, x)
+ 
+    else:
+        # Element is not present in the array
+        return -1
+ 
+# Test array
+arr = [ 2, 3, 4, 10, 40 ]
+x = 10
+ 
+# Function call
+result = binary_search(arr, 0, len(arr)-1, x)
+ 
+if result != -1:
+    print("Element is present at index", str(result))
+else:
+    print("Element is not present in array")
+
+Practical 10
+Q.1) Write a program to store and display Graph data structure using adjacency matrix in python.
+class Graph(object):
+
+    # Initialize the matrix
+    def __init__(self, size):
+        self.adjMatrix = []
+        for i in range(size):
+            self.adjMatrix.append([0 for i in range(size)])
+        self.size = size
+
+    # Add edges
+    def add_edge(self, v1, v2):
+        if v1 == v2:
+            print("Same vertex %d and %d" % (v1, v2))
+        self.adjMatrix[v1][v2] = 1
+        self.adjMatrix[v2][v1] = 1
+
+    # Remove edges
+    def remove_edge(self, v1, v2):
+        if self.adjMatrix[v1][v2] == 0:
+            print("No edge between %d and %d" % (v1, v2))
+            return
+        self.adjMatrix[v1][v2] = 0
+        self.adjMatrix[v2][v1] = 0
+
+    def __len__(self):
+        return self.size
+
+    # Print the matrix
+    def print_matrix(self):
+        for row in self.adjMatrix:
+            for val in row:
+                print('{:4}'.format(val)),
+            print
+
+
+def main():
+    g = Graph(5)
+    g.add_edge(0, 1)
+    g.add_edge(0, 2)
+    g.add_edge(1, 2)
+    g.add_edge(2, 0)
+    g.add_edge(2, 3)
+
+    g.print_matrix()
+
+
+if __name__ == '__main__':
+    main()
+
+Q.2) Write a program to implement Graph traversal(BFS ) in python.
+# BFS algorithm in Python
+
+
+import collections
+
+# BFS algorithm
+def bfs(graph, root):
+
+    visited, queue = set(), collections.deque([root])
+    visited.add(root)
+
+    while queue:
+
+        # Dequeue a vertex from queue
+        vertex = queue.popleft()
+        print(str(vertex) + " ", end="")
+
+        # If not visited, mark it as visited, and
+        # enqueue it
+        for neighbour in graph[vertex]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+
+
+if __name__ == '__main__':
+    graph = {0: [1, 2], 1: [2], 2: [3], 3: [1, 2]}
+    print("Following is Breadth First Traversal: ")
+    bfs(graph, 0)
+
+Q.3) Write a program to implement Graph Traversal (DFS) in python.
+# DFS algorithm
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+
+    print(start)
+
+    for next in graph[start] - visited:
+        dfs(graph, next, visited)
+    return visited
+
+
+graph = {'0': set(['1', '2']),
+         '1': set(['0', '3', '4']),
+         '2': set(['0']),
+         '3': set(['1']),
+         '4': set(['2', '3'])}
+
+dfs(graph, '0')
+ 
+
